@@ -1,0 +1,19 @@
+<div class="editable-select">
+  <div class="input-group dropdown">
+    <input name="editable-select"
+           type="text"
+           pattern="^[A-Za-z]*$" maxlength="20"
+           class="form-control dropdown-toggle editable-select__input"
+           ng-disabled="isDisabled"
+           ng-change="$ctrl.onChanged($ctrl.inputText)"
+           ng-model="$ctrl.inputText">
+    <ul class="dropdown-menu">
+      <li ng-repeat="option in selectOptions" class="editable-select__option--hover"
+          ng-click="$ctrl.onSelected(option)"
+          ng-bind="::option.label">
+      </li>
+      <li ng-if="other" role="presentation" class="divider"></li>
+      <li ng-if="other" ng-bind="other"></li>
+    </ul>
+  </div>
+</div>

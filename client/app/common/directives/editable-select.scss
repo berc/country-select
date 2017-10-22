@@ -1,0 +1,24 @@
+@import '../common';
+
+.editable-select {
+  input[name="editable-select"]:disabled {
+    background-color: #ffffff;
+  }
+
+  .dropdown-menu:hover {
+    cursor: pointer;
+  }
+
+  .dropdown-menu > li {
+    padding-left: 10px;
+  }
+
+  .dropdown-menu > li:hover {
+    background-color: #337ab7;
+    color: #ffffff;
+  }
+
+  input[pattern]:invalid{
+    color:red;
+  }
+}

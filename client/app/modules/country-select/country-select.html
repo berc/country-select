@@ -1,0 +1,28 @@
+<main class="country-select">
+
+  <div class="row">
+    <h1 id="select-country-caption">Selection of Countries</h1>
+    <div class="country-select__start-game col-xs-12 col-md-4">
+      <p class="form-group">
+        <label for="select-country-elem">Country</label>
+        <editable-select id="select-country-elem" select-options="$ctrl.filteredCountries"
+                         on-selected-option="$ctrl.onSelectedOption(option)"
+                         on-changed-text="$ctrl.onChangedSearchText(value)">
+        </editable-select>
+      </p>
+      <p class="form-group">
+        <label for="selected-countries">Selected</label>
+        <ul id="selected-countries">
+          <li ng-repeat="country in $ctrl.selectedCountries track by country.id"><span ng-bind="::country.label"></span><a href="javascript:void(0)" ng-click="$ctrl.removeSelectedCountry(country.id)"><span class="glyphicon">&#xe014;</span></a></li>
+        </ul>
+      </p>
+      <p class="form-group">
+        <button type="button" class="btn btn-primary btn-lg" ng-click="$ctrl.sendSelectedCountries()">Submit</button>
+      </p>
+      <p class="form-group">
+        {{$ctrl.submitResult}}
+      </p>
+    </div>
+  </div>
+
+</main>
